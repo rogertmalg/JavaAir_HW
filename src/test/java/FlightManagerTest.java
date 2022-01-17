@@ -2,6 +2,8 @@ import com.sun.org.glassfish.external.statistics.annotations.Reset;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Calendar;
+
 import static org.junit.Assert.assertEquals;
 
 public class FlightManagerTest {
@@ -26,7 +28,7 @@ public class FlightManagerTest {
         passenger = new Passenger("Bob", 2);
         plane = new Plane(PlaneType.BOEING737);
         flight = new Flight(pilot, crew1, crew2, crew3, plane, "EDI013", "Rio de Janeiro",
-                "EDI", "02-1-2018 06:07:59");
+                "EDI", Calendar.getInstance().getTime());
     }
 
     @Test

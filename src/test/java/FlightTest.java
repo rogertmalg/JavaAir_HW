@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import static org.junit.Assert.assertEquals;
 
@@ -24,7 +25,7 @@ public class FlightTest {
         passenger = new Passenger("Bob", 2);
         plane = new Plane(PlaneType.BOEING737);
         flight = new Flight(pilot, crew1, crew2, crew3, plane, "EDI013", "Rio de Janeiro",
-                "EDI", "02-1-2018 06:07:59");
+                "EDI", Calendar.getInstance().getTime());
     }
 
     @Test
@@ -64,7 +65,7 @@ public class FlightTest {
 
     @Test
     public void canGetDepTime() {
-        assertEquals("02-1-2018 06:07:59", flight.getDepTime());
+        assertEquals(Calendar.getInstance().getTime(), flight.getDepTime());
     }
 
     @Test
